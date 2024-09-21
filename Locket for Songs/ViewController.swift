@@ -15,10 +15,7 @@ class ViewController: UIViewController {
     }
 
 
-<<<<<<< HEAD
-=======
-    @IBAction func startButton(_ sender: Any) {
-    }
->>>>>>> origin/main
+//    @IBAction func startButton(_ sender: Any) {
+//    }
 }
 
