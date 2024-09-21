@@ -9,9 +9,12 @@ import UIKit
 
 class ProfileScreen: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        
         // Do any additional setup after loading the view.
     }
     
