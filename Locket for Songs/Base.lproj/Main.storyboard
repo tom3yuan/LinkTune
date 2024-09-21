@@ -84,6 +84,44 @@
             </objects>
             <point key="canvasLocation" x="-1003.8167938931298" y="-735.21126760563379"/>
         </scene>
+        <!--Friend Screen-->
+        <scene sceneID="f7z-qv-Zuy">
+            <objects>
+                <viewController id="CDD-xu-Ec0" customClass="FriendScreen" customModule="Locket_for_Songs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OCZ-jj-gGo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" ambiguous="YES" text="" placeholder="Username" translatesAutoresizingMaskIntoConstraints="NO" id="SII-BX-y69">
+                                <rect key="frame" x="0.0" y="147" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CDD-xu-Ec0" id="ZEe-2M-6ab"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lc-MF-cky">
+                                <rect key="frame" x="52.666666666666657" y="59" width="288" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="quP-CG-7Vn"/>
+                        <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SII-BX-y69" firstAttribute="top" secondItem="4Lc-MF-cky" secondAttribute="bottom" constant="28" id="RPH-0t-4i4"/>
+                            <constraint firstItem="4Lc-MF-cky" firstAttribute="centerX" secondItem="quP-CG-7Vn" secondAttribute="centerX" id="Tv5-4e-lN2"/>
+                            <constraint firstItem="4Lc-MF-cky" firstAttribute="top" secondItem="quP-CG-7Vn" secondAttribute="top" id="vBR-OW-tb7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="SII-BX-y69" id="3JH-8G-L1S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1y-jH-RQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351.90839694656489" y="-743.66197183098598"/>
+        </scene>
         <!--Search Screen-->
         <scene sceneID="vew-77-Nlj">
             <objects>
@@ -269,6 +307,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ad0-cs-mf9"/>
                     <connections>
+                        <outlet property="nameBox" destination="EZb-Aj-lrG" id="c2i-Se-pv9"/>
                         <outlet property="profileImage" destination="B0H-wc-gup" id="wog-Qg-eiW"/>
                     </connections>
                 </viewController>

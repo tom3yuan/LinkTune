@@ -10,17 +10,19 @@ import UIKit
 class ProfileScreen: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameBox: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
-        
+        let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
+        nameBox.text = storedUsername
         // Do any additional setup after loading the view.
         
         view.backgroundColor = UIColor(red: 30, green: 230, blue: 230, alpha: 50)
     }
     
-
+    
     /*
     // MARK: - Navigation
 
