@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SearchScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let db = Firestore.firestore()
         // Do any additional setup after loading the view.
     }
     
