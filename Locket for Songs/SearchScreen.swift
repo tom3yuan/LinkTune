@@ -1,6 +1,6 @@
 import UIKit
 import Firebase
-
+import FirebaseFirestore
 
 class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -131,8 +131,26 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
         let selectedSong = filteredSongs[indexPath.row]
         if let songName = selectedSong["songName"], let artistName = selectedSong["artistName"] {
             print("Selected song: \(songName) by \(artistName)")
+            storeData("Selected song: \(songName) by \(artistName)")
+            
         }
         
         // Implement logic to play the selected song or take other actions
+    }
+
+    func storeData(_ message: String) {
+        let db = Firestore.firestore()
+        let dataToStore = [
+            message: Timestamp(date: Date())
+        ]
+        
+        // Add a new document with a generated ID
+        db.collection("messages").addDocument(data: dataToStore) { error in
+            if let error = error {
+                print("Error adding document: \(error.localizedDescription)")
+            } else {
+                print("Document added successfully!")
+            }
+        }
     }
 }

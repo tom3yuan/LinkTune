@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class SetupScreen: UIViewController {
 
@@ -32,10 +34,27 @@ class SetupScreen: UIViewController {
         
             print("Username: \(username)")
             //print("Password: \(password)")
+            saveDataToFirestore(username)
             goToHome()
             }
             // You can add additional logic here to handle the data (e.g., validation, saving, etc.)
+    func saveDataToFirestore(_ inputName: String) {
+        let db = Firestore.firestore()
+        let dataToStore: [String: Any] = [
+            "name": inputName,
+            "songList": [],
+            "friendList": []
+        ]
         
+        // Add a new document with a generated ID
+        db.collection("users").addDocument(data: dataToStore) { error in
+            if let error = error {
+                print("Error adding document: \(error.localizedDescription)")
+            } else {
+                print("Document added successfully!")
+            }
+        }
+    }
     func goToHome() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailVC = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController")
