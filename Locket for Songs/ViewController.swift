@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     }
 
 
-    @IBOutlet weak var startButton: UILabel!
+    @IBAction func startButton(_ sender: Any) {
+    }
 }
 
