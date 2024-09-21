@@ -25,22 +25,6 @@
                                     <action selector="usernameTextbox:" destination="dlT-4k-3br" eventType="editingDidEnd" id="b6i-jj-VB6"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMR-1k-520">
-                                <rect key="frame" x="92" y="389" width="208" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="passwordTextbox:" destination="dlT-4k-3br" eventType="editingDidEnd" id="26v-yw-EJy"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAh-Xs-QpU">
-                                <rect key="frame" x="157" y="344" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gks-Jr-6Py">
                                 <rect key="frame" x="155" y="221" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,9 +75,8 @@
                     </view>
                     <connections>
                         <outlet property="UsernameLabel" destination="gks-Jr-6Py" id="9aX-TD-Vhf"/>
-                        <outlet property="passwordLabel" destination="uAh-Xs-QpU" id="YiK-Oq-6HL"/>
-                        <outlet property="passwordTextbox" destination="XMR-1k-520" id="pPl-WT-fkz"/>
                         <outlet property="titleLabel" destination="cZH-Om-7XK" id="RXa-xB-WfW"/>
+                        <outlet property="usernameLabel" destination="gks-Jr-6Py" id="8lt-gX-Fiq"/>
                         <outlet property="usernameTextbox" destination="5q4-aL-jEx" id="uJi-MQ-UII"/>
                     </connections>
                 </viewController>

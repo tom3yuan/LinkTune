@@ -16,7 +16,7 @@ class SetupScreen: UIViewController {
     }
     
     @IBOutlet weak var usernameTextbox: UITextField!
-    @IBOutlet weak var passwordTextbox: UITextField!
+    //@IBOutlet weak var passwordTextbox: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
@@ -24,27 +24,33 @@ class SetupScreen: UIViewController {
     @IBAction func createButton(_ sender: Any) {
             // Get text from the username and password textboxes
             let username = getUsername()
-            let password = getPassword()
+            //let password = getPassword()
         
             UserDefaults.standard.set(username, forKey: "username")
             // CHECK IF USERNAME IS VALID
             //IF IT IS, USER IS TRYING TO LOG IN, IF NOT, USER IS TRYING TO REGISTER
         
             print("Username: \(username)")
-            print("Password: \(password)")
-            
+            //print("Password: \(password)")
+            goToHome()
+            }
             // You can add additional logic here to handle the data (e.g., validation, saving, etc.)
-        }
         
+    func goToHome() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController")
+        self.present(detailVC, animated: true, completion: nil)
+        
+    }
         // Function to retrieve the username text
     func getUsername() -> String {
         return usernameTextbox.text ?? "" // Returns the entered username or an empty string if nil
     }
         
         // Function to retrieve the password text
-    func getPassword() -> String {
-        return passwordTextbox.text ?? "" // Returns the entered password or an empty string if nil
-    }
+        //func getPassword() -> String {
+        //return passwordTextbox.text ?? "" // Returns the entered password or an empty string if nil
+   // }
     /*
      @IBOutlet weak var UsernameLabel: UILabel!
      // MARK: - Navigation
