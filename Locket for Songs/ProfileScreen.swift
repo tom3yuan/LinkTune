@@ -16,6 +16,8 @@ class ProfileScreen: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         
         // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor(red: 30, green: 230, blue: 230, alpha: 50)
     }
     
 
