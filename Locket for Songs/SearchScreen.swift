@@ -131,8 +131,8 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
         let selectedSong = filteredSongs[indexPath.row]
         if let songName = selectedSong["songName"], let artistName = selectedSong["artistName"] {
             print("Selected song: \(songName) by \(artistName)")
-            storeData("Selected song: \(songName) by \(artistName)")
-            
+            let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
+            updateSongListByName(storedUsername, newSong: "\(songName) by \(artistName)")
         }
         
         // Implement logic to play the selected song or take other actions
@@ -152,5 +152,33 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
                 print("Document added successfully!")
             }
         }
+    }
+    func updateSongListByName(_ name: String, newSong: String) {
+        let db = Firestore.firestore()
+        // Query the "users" collection to find the document where the "name" field matches the provided name
+        db.collection("users").whereField("name", isEqualTo: name).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching document: \(error.localizedDescription)")
+            } else if let querySnapshot = querySnapshot, !querySnapshot.isEmpty {
+                // If a document with the given name exists, get the first document
+                if let document = querySnapshot.documents.first {
+                    let documentID = document.documentID  // Get the document ID of the matched document
+                    
+                    // Update the "songList" field in the found document
+                    db.collection("users").document(documentID).updateData([
+                        "songList": FieldValue.arrayUnion([newSong])  // Add the new song to the songList
+                    ]) { error in
+                        if let error = error {
+                            print("Error updating songList: \(error.localizedDescription)")
+                        } else {
+                            print("Successfully updated songList for user \(name)")
+                        }
+                    }
+                }
+            } else {
+                print("No document found with the name \(name)")
+            }
+        }
+    
     }
 }

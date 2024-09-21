@@ -11,12 +11,13 @@ class HomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //fjaiofkljsdafjlas;fajskdfj
         // Do any additional setup after loading the view.
     }
     //to do: after being able to get songs other people posts, show the songs that you receive here!
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     /*
     // MARK: - Navigation
 

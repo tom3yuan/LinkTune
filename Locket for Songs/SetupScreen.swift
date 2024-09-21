@@ -17,7 +17,7 @@ class SetupScreen: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var usernameTextbox: UITextField!
+    @IBOutlet weak var usernameTextbox: UITextField?
     //@IBOutlet weak var passwordTextbox: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -33,7 +33,9 @@ class SetupScreen: UIViewController {
             //IF IT IS, USER IS TRYING TO LOG IN, IF NOT, USER IS TRYING TO REGISTER
         
             print("Username: \(username)")
+            
             //print("Password: \(password)")
+            
             saveDataToFirestore(username)
             goToHome()
             }
@@ -63,7 +65,7 @@ class SetupScreen: UIViewController {
     }
         // Function to retrieve the username text
     func getUsername() -> String {
-        return usernameTextbox.text ?? "" // Returns the entered username or an empty string if nil
+        return usernameTextbox!.text ?? "No name..." // Returns the entered username or an empty string if nil
     }
         
         // Function to retrieve the password text
