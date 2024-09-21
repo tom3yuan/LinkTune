@@ -30,28 +30,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A0EBA1E42C9F4C2300C676BA /* Exceptions for "SongData" folder in "Locket for Songs" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"ABBA - Dancing Queen (Official Lyric Video).mp3",
-				"Billy Joel - Piano Man (Lyrics).mp3",
-				"Elton John - Rocket Man (Lyrics).mp3",
-				"Queen  Bohemian Rhapsody (Official Video Remastered).mp3",
-				"The Beatles- Hey Jude (lyrics).mp3",
-			);
-			target = ECBA59332C9E882300DA7FB6 /* Locket for Songs */;
-		};
-		A0EBA1E52C9F4C2300C676BA /* Exceptions for "SongData" folder in "Locket for SongsUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"ABBA - Dancing Queen (Official Lyric Video).mp3",
-				"Billy Joel - Piano Man (Lyrics).mp3",
-				"Elton John - Rocket Man (Lyrics).mp3",
-				"Queen  Bohemian Rhapsody (Official Video Remastered).mp3",
-				"The Beatles- Hey Jude (lyrics).mp3",
-			);
-			target = ECBA59532C9E882600DA7FB6 /* Locket for SongsUITests */;
-		};
 		ECBA595C2C9E882600DA7FB6 /* Exceptions for "Locket for Songs" folder in "Locket for Songs" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -62,15 +40,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A0EBA1D92C9F4BD200C676BA /* SongData */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A0EBA1E42C9F4C2300C676BA /* Exceptions for "SongData" folder in "Locket for Songs" target */,
-				A0EBA1E52C9F4C2300C676BA /* Exceptions for "SongData" folder in "Locket for SongsUITests" target */,
-			);
-			path = SongData;
-			sourceTree = "<group>";
-		};
 		ECBA59362C9E882300DA7FB6 /* Locket for Songs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -123,7 +92,6 @@
 				ECBA594D2C9E882600DA7FB6 /* Locket for SongsTests */,
 				ECBA59572C9E882600DA7FB6 /* Locket for SongsUITests */,
 				ECBA59352C9E882300DA7FB6 /* Products */,
-				A0EBA1D92C9F4BD200C676BA /* SongData */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +167,6 @@
 				ECBA59562C9E882600DA7FB6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A0EBA1D92C9F4BD200C676BA /* SongData */,
 				ECBA59572C9E882600DA7FB6 /* Locket for SongsUITests */,
 			);
 			name = "Locket for SongsUITests";
