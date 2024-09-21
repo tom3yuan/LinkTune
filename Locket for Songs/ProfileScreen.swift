@@ -11,8 +11,9 @@ class ProfileScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor(red: 30, green: 230, blue: 230, alpha: 50)
     }
     
 
