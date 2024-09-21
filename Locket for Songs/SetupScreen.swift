@@ -25,7 +25,8 @@ class SetupScreen: UIViewController {
             // Get text from the username and password textboxes
             let username = getUsername()
             let password = getPassword()
-            
+        
+            UserDefaults.standard.set(username, forKey: "username")
             // CHECK IF USERNAME IS VALID
             //IF IT IS, USER IS TRYING TO LOG IN, IF NOT, USER IS TRYING TO REGISTER
         
