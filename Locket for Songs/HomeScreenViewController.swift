@@ -7,6 +7,7 @@ struct User {
 }
 
 class HomeScreenViewController: UIViewController {
+    @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     
@@ -16,6 +17,18 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     
+    @IBAction func refresh(_ sender: Any) {
+        getFriendListFromFirestore(forUsername: storedUsername) { [weak self] friendList in
+            if let unwrappedFriends = friendList {
+                self?.friendsList = unwrappedFriends  // Store the returned array in the variable
+                
+                // Call to get song lists after we have the friendsList
+                self?.fetchSongs()
+            } else {
+                print("No friends found or an error occurred.")
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HomeScreen loaded")
@@ -35,6 +48,7 @@ class HomeScreenViewController: UIViewController {
     }
     
     func fetchSongs() {
+        clearStackView()
         var songs: [String] = []
         let totalFriends = friendsList.count
         var fetchedSongsCount = 0
@@ -74,6 +88,19 @@ class HomeScreenViewController: UIViewController {
 //                }
             }
         }
+        func clearStackView() {
+
+                    // Remove all arranged subviews from the stack view
+
+                    for arrangedSubview in stackView.arrangedSubviews {
+
+                        stackView.removeArrangedSubview(arrangedSubview)
+
+                        arrangedSubview.removeFromSuperview() // Remove it from the superview as well
+
+                    }
+
+                }
     }
     
     func getSongListFromFirestore(forUsername username: String, completion: @escaping ([String]?) -> Void) {
