@@ -397,6 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-1S-TAJ">
+
                                 <rect key="frame" x="110" y="84" width="172" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
@@ -497,7 +498,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="ad0-cs-mf9"/>
                     <connections>
-                        <outlet property="listOfSongs" destination="g8A-ev-7zD" id="6ip-d1-Y0M"/>
                         <outlet property="nameBox" destination="EZb-Aj-lrG" id="c2i-Se-pv9"/>
                         <outlet property="profileImage" destination="B0H-wc-gup" id="wog-Qg-eiW"/>
                     </connections>
