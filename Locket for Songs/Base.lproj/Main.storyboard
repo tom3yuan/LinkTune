@@ -248,7 +248,6 @@
                     <connections>
                         <outlet property="refreshButton" destination="DmW-3D-YCh" id="49M-Pu-UPl"/>
                         <outlet property="stackView" destination="41X-Wr-b0r" id="xmW-KG-PzH"/>
-                        <outlet property="titleLabel" destination="wcP-It-iXn" id="kvB-HR-69r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

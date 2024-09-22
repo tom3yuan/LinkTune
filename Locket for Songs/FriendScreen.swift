@@ -19,6 +19,7 @@ import FirebaseFirestore
 class FriendScreen: UIViewController {
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     @IBOutlet weak var textbox1: UITextField!
+    @IBOutlet weak var textbox2: UILabel!
     @IBOutlet weak var buton1: UIButton!
     var allNames: [String] = []
     override func viewDidLoad() {
@@ -31,6 +32,8 @@ class FriendScreen: UIViewController {
         if allNames.contains(abc!){
             updateFriendListByName(storedUsername, newFriend: abc!)
         }
+        textbox1.text=""
+        textbox2.text=abc! + " is now your friend!"
     }
     func fetchAllNames() {
         fetchAllNamesFromFirestore { [weak self] names, error in
