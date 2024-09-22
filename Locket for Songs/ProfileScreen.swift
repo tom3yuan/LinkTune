@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class ProfileScreen: UIViewController {
+class ProfileScreen: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameBox: UITextView!
@@ -45,8 +45,45 @@ class ProfileScreen: UIViewController {
         // Do any additional setup after loading the view.
         
         view.backgroundColor = UIColor(red: 30, green: 230, blue: 230, alpha: 50)
+        
+        profileImage.isUserInteractionEnabled = true
+                
+                // Create a UITapGestureRecognizer instance
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+                
+                // Add the gesture recognizer to the imageView
+                profileImage.addGestureRecognizer(tapGesture)
     }
     
+    
+    @objc func imageTapped() {
+            print("Image was tapped!")
+            // Add any additional logic here (e.g., navigate to a new screen, show alert, etc.)
+            let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true
+                
+                // Present the image picker
+                present(imagePicker, animated: true, completion: nil)
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            // Access the selected image
+            if let selectedImage = info[.editedImage] as? UIImage {
+                profileImage.image = selectedImage
+            } else if let originalImage = info[.originalImage] as? UIImage {
+                profileImage.image = originalImage
+            }
+            
+            // Dismiss the picker
+            dismiss(animated: true, completion: nil)
+        }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
     
     func getSongListFromFirestore(forUsername username: String, completion: @escaping ([String]?) -> Void) {
         let db = Firestore.firestore()
