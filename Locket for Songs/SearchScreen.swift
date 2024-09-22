@@ -6,6 +6,7 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var successMessage: UILabel!
     
     var allSongs: [[String : String]] = []
     var filteredSongs: [[String : String]] = []
@@ -154,6 +155,8 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
         }
     }
     func updateSongListByName(_ name: String, newSong: String) {
+        successMessage.text="\(newSong) successfully recommended to your friends!"
+        
         let db = Firestore.firestore()
         // Query the "users" collection to find the document where the "name" field matches the provided name
         db.collection("users").whereField("name", isEqualTo: name).getDocuments { (querySnapshot, error) in
