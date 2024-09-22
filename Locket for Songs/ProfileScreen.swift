@@ -15,6 +15,7 @@ class ProfileScreen: UIViewController {
     @IBOutlet weak var nameBox: UITextView!
 
     @IBOutlet weak var listOfSongs: UITextView!
+    @IBOutlet weak var listOfNames: UITextView!
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,16 @@ class ProfileScreen: UIViewController {
                     self.listOfSongs.text = "Songs: \(songListString)"
                 } else {
                     self.listOfSongs.text = "Could not retrieve song list."
+                }
+            }
+        getFriendListFromFirestore(forUsername: storedUsername) { friendList in
+                if let friendList = friendList {
+                    // Convert the array of song names into a single string
+                    let friendListString = friendList.joined(separator: ", ")
+                    // Set the label's text to the formatted string
+                    self.listOfNames.text = "Friends: \(friendListString)"
+                } else {
+                    self.listOfNames.text = "Could not retrieve song list."
                 }
             }
         // Do any additional setup after loading the view.
@@ -54,6 +65,32 @@ class ProfileScreen: UIViewController {
                         completion(songList)  // Return the song list
                     } else {
                         print("No songList found for user \(username)")
+                        completion(nil)  // Return nil if no songList is found
+                    }
+                }
+            } else {
+                print("No document found for user \(username)")
+                completion(nil)  // Return nil if no document found
+            }
+        }
+    }
+    func getFriendListFromFirestore(forUsername username: String, completion: @escaping ([String]?) -> Void) {
+        let db = Firestore.firestore()
+        
+        // Query the "users" collection for the document with the specified username
+        db.collection("users").whereField("name", isEqualTo: username).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching document: \(error.localizedDescription)")
+                completion(nil)  // Return nil on error
+            } else if let querySnapshot = querySnapshot, !querySnapshot.isEmpty {
+                // Get the first matching document
+                if let document = querySnapshot.documents.first {
+                    // Retrieve the "songList" field
+                    if let friendList = document.get("friendList") as? [String] {
+                        print("Successfully fetched friendList: \(friendList)")
+                        completion(friendList)  // Return the song list
+                    } else {
+                        print("No friendList found for user \(username)")
                         completion(nil)  // Return nil if no songList is found
                     }
                 }
