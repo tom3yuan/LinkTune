@@ -13,9 +13,14 @@ class HomeScreenViewController: UIViewController {
     var friendsList: [String] = []  // Initialize as an empty array
     let db = Firestore.firestore()
     
+    @IBOutlet weak var stackView: UIStackView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("FriendScreen loaded")
+        print("HomeScreen loaded")
+        
+        view.addSubview(stackView)
         
         getFriendListFromFirestore(forUsername: storedUsername) { [weak self] friendList in
             if let unwrappedFriends = friendList {
@@ -45,17 +50,25 @@ class HomeScreenViewController: UIViewController {
                 if let songList = songList, !songList.isEmpty {
                     // Append the first song to the songs array
                     songs.append(songList[0])
+                    
+                    let songLabel = UILabel()
+                    songLabel.text = songList[0]
+                    songLabel.textAlignment = .center
+                    songLabel.textColor = .white
+                    self.stackView.addArrangedSubview(songLabel)
+                    self.stackView.alignment = .center // Center the label horizontally
+                    self.stackView.distribution = .equalSpacing
                 }
                 
                 // Increment the fetchedSongsCount
                 fetchedSongsCount += 1
                 
                 // After fetching songs for all friends, update the label
-                if fetchedSongsCount == totalFriends { // Check if this is the last friend
-                    let songListString = songs.joined(separator: ", ")
-                    print("Songs: \(songListString)")
-                    self.titleLabel.text = "Songs: \(songListString)"
-                }
+//                if fetchedSongsCount == totalFriends { // Check if this is the last friend
+//                    let songListString = songs.joined(separator: ", ")
+//                    print("Songs: \(songListString)")
+//                    self.titleLabel.text = "Songs: \(songListString)"
+//                }
             }
         }
     }
