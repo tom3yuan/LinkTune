@@ -8,7 +8,7 @@ struct User {
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
+//    @IBOutlet weak var titleLabel: UILabel!
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     
     var friendsList: [String] = []  // Initialize as an empty array
@@ -55,11 +55,11 @@ class HomeScreenViewController: UIViewController {
 
         if totalFriends == 0 {
             // No friends to fetch songs for
-            titleLabel.text = "Add your friends first!"
+//            titleLabel.text = "Add your friends first!"
             print("YOU HAVE NO FRIENDS")
             return
         }else{
-            titleLabel.text=""
+//            titleLabel.text=""
         }
 
         for friend in friendsList {
@@ -70,7 +70,7 @@ class HomeScreenViewController: UIViewController {
                     
                     let songLabel = UILabel()
                     songLabel.text = songList[0]
-                    songLabel.textAlignment = .center
+                    songLabel.textAlignment = .left
                     songLabel.textColor = .white
                     self.stackView.addArrangedSubview(songLabel)
                     self.stackView.alignment = .center // Center the label horizontally
