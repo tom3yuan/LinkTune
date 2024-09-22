@@ -268,7 +268,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-KB-ihe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-KB-ihe">
                                 <rect key="frame" x="90" y="191" width="217" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -362,6 +362,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ad0-cs-mf9"/>
                     <connections>
+                        <outlet property="listOfNames" destination="ZGF-h1-dnE" id="gth-Q5-SMi"/>
+                        <outlet property="listOfSongs" destination="g8A-ev-7zD" id="RE2-w4-sfE"/>
                         <outlet property="nameBox" destination="EZb-Aj-lrG" id="c2i-Se-pv9"/>
                         <outlet property="profileImage" destination="B0H-wc-gup" id="wog-Qg-eiW"/>
                     </connections>
