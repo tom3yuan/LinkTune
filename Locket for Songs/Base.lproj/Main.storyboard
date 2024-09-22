@@ -101,10 +101,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrV-CP-86H">
-                                <rect key="frame" x="315" y="118" width="55" height="21"/>
+                                <rect key="frame" x="304" y="117" width="66" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                     <color key="baseBackgroundColor" red="0.44705885649999999" green="0.54901963470000004" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -193,28 +194,34 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcP-It-iXn">
-                                <rect key="frame" x="176" y="416" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2p-YR-d4d">
                                 <rect key="frame" x="0.0" y="769" width="393" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" image="person.2" catalog="system" width="118.66666666666666" id="o4p-eg-GKk">
+                                    <barButtonItem title="Item" image="person.2" catalog="system" width="104.66666666666666" id="o4p-eg-GKk">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="CDD-xu-Ec0" kind="presentation" id="tVY-VC-ZlY"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Item" image="plus.circle" catalog="system" width="154.66666412353516" id="oyK-JF-axc">
+                                    <barButtonItem title="Item" image="plus.circle" catalog="system" width="92.666664123535156" id="oyK-JF-axc">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="kWi-cM-qmb" kind="show" id="57L-Wx-ZXs"/>
                                         </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="njQ-d3-tc3">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DmW-3D-YCh">
+                                            <rect key="frame" x="197.33333333333334" y="5" width="99.000000000000028" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" image="arrow.clockwise" catalog="system">
+                                                <color key="baseBackgroundColor" red="0.44705885649999999" green="0.54901963470000004" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oE4-26-N43"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                     <barButtonItem title="Item" image="person.crop.circle" catalog="system" width="114.66666412353516" id="HdQ-tn-Tmm">
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -225,23 +232,14 @@
                                 </items>
                                 <color key="barTintColor" red="0.44705885649999999" green="0.54901963470000004" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="center" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="41X-Wr-b0r">
-                                <rect key="frame" x="47" y="192" width="299" height="511"/>
+                            <stackView opaque="NO" contentMode="left" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="41X-Wr-b0r">
+                                <rect key="frame" x="30" y="192" width="333" height="20"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmW-3D-YCh">
-                                <rect key="frame" x="32" y="711" width="75" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oE4-26-N43"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.44705885649999999" green="0.54901963470000004" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="41X-Wr-b0r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="KtS-ji-Moa"/>
+                            <constraint firstItem="41X-Wr-b0r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="KtS-ji-Moa"/>
                             <constraint firstItem="41X-Wr-b0r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="133" id="elj-tG-WSX"/>
                             <constraint firstItem="41X-Wr-b0r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="okM-Cb-qAk"/>
                         </constraints>
@@ -249,7 +247,6 @@
                     <connections>
                         <outlet property="refreshButton" destination="DmW-3D-YCh" id="49M-Pu-UPl"/>
                         <outlet property="stackView" destination="41X-Wr-b0r" id="xmW-KG-PzH"/>
-                        <outlet property="titleLabel" destination="wcP-It-iXn" id="kvB-HR-69r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -318,6 +315,7 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="110" height="128"/>
         <image name="default" width="360" height="360"/>
         <image name="person.2" catalog="system" width="128" height="87"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
