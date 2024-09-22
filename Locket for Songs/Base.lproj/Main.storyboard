@@ -264,51 +264,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTI-qh-C7P">
-                                <rect key="frame" x="13" y="120" width="367" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="B0H-wc-gup">
+                                <rect key="frame" x="17" y="77" width="360" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-AN-L85">
+                                <rect key="frame" x="39" y="298" width="318" height="461.33333333333326"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="B0H-wc-gup">
-                                        <rect key="frame" x="0.0" y="0.0" width="367" height="128"/>
-                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="song 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8A-ev-7zD">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="230.66666666666666"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="song 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZGF-h1-dnE">
+                                        <rect key="frame" x="0.0" y="230.66666666666669" width="318" height="230.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Username" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-Aj-lrG">
-                                <rect key="frame" x="37" y="340" width="318" height="160.66666666666669"/>
+                                <rect key="frame" x="2" y="213" width="391" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-AN-L85">
-                                <rect key="frame" x="39" y="277" width="318" height="482"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8A-ev-7zD">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="241"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZGF-h1-dnE">
-                                        <rect key="frame" x="0.0" y="241" width="318" height="241"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IgF-yh-Spp"/>
                         <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="IgF-yh-Spp" firstAttribute="trailing" secondItem="qjp-AN-L85" secondAttribute="trailing" constant="36" id="EZY-O4-J3A"/>
-                            <constraint firstItem="IgF-yh-Spp" firstAttribute="bottom" secondItem="QTI-qh-C7P" secondAttribute="bottom" constant="594" id="O0t-hd-o5S"/>
-                            <constraint firstItem="QTI-qh-C7P" firstAttribute="leading" secondItem="IgF-yh-Spp" secondAttribute="leading" constant="13" id="PL3-v8-DRm"/>
                             <constraint firstItem="IgF-yh-Spp" firstAttribute="bottom" secondItem="qjp-AN-L85" secondAttribute="bottom" constant="83" id="fSS-We-3N7"/>
-                            <constraint firstItem="QTI-qh-C7P" firstAttribute="top" secondItem="IgF-yh-Spp" secondAttribute="top" constant="120" id="qxU-lc-xa8"/>
-                            <constraint firstItem="qjp-AN-L85" firstAttribute="top" secondItem="QTI-qh-C7P" secondAttribute="bottom" constant="29" id="rnW-Dj-cDg"/>
-                            <constraint firstItem="QTI-qh-C7P" firstAttribute="centerX" secondItem="Wxw-qr-0kI" secondAttribute="centerX" id="wNq-nl-0JO"/>
                             <constraint firstItem="qjp-AN-L85" firstAttribute="leading" secondItem="IgF-yh-Spp" secondAttribute="leading" constant="39" id="xPg-Kn-DDg"/>
                         </constraints>
                     </view>
