@@ -194,9 +194,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="center" fixedFrame="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="41X-Wr-b0r">
-                                <rect key="frame" x="32" y="217" width="332" height="427"/>
+                                <rect key="frame" x="32" y="217" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcP-It-iXn">
+                                <rect key="frame" x="176" y="416" width="14" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2p-YR-d4d">
                                 <rect key="frame" x="0.0" y="769" width="393" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -224,10 +231,11 @@
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.44705885649999999" green="0.54901963470000004" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
                         <outlet property="stackView" destination="41X-Wr-b0r" id="xmW-KG-PzH"/>
+                        <outlet property="titleLabel" destination="wcP-It-iXn" id="kvB-HR-69r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -264,28 +272,14 @@
                                 <rect key="frame" x="39" y="277" width="318" height="482"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8A-ev-7zD">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="120.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="241"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZGF-h1-dnE">
-                                        <rect key="frame" x="0.0" y="120.66666666666669" width="318" height="120.33333333333331"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 3" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-th-KHv">
-                                        <rect key="frame" x="0.0" y="240.99999999999997" width="318" height="120.66666666666666"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 4" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="50N-iY-YiL">
-                                        <rect key="frame" x="0.0" y="361.66666666666663" width="318" height="120.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="241" width="318" height="241"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

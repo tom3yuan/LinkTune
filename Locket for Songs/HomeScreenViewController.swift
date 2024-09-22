@@ -41,8 +41,11 @@ class HomeScreenViewController: UIViewController {
 
         if totalFriends == 0 {
             // No friends to fetch songs for
-            titleLabel.text = "No friends to display songs for."
+            titleLabel.text = "Add your friends first!"
+            print("YOU HAVE NO FRIENDS")
             return
+        }else{
+            titleLabel.text=""
         }
 
         for friend in friendsList {

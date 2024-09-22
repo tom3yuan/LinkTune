@@ -19,7 +19,8 @@ class ProfileScreen: UIViewController, UIImagePickerControllerDelegate, UINaviga
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2.0
+        profileImage.clipsToBounds = true
         let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
         nameBox.text = storedUsername
         getSongListFromFirestore(forUsername: storedUsername) { songList in
