@@ -69,7 +69,7 @@ class HomeScreenViewController: UIViewController {
                     songs.append(songList[0])
                     
                     let songLabel = UILabel()
-                    songLabel.text = songList[0]
+                    songLabel.text = songList[songList.count - 1]
                     songLabel.textAlignment = .left
                     songLabel.textColor = .white
                     self.stackView.addArrangedSubview(songLabel)
