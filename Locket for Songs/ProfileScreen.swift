@@ -14,8 +14,9 @@ class ProfileScreen: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameBox: UITextView!
 
-    @IBOutlet weak var listOfSongs: UITextView!
-    @IBOutlet weak var listOfNames: UITextView!
+    @IBOutlet weak var songsList: UIStackView!
+    @IBOutlet weak var stackOfLists: UIStackView!
+    @IBOutlet weak var friendsList: UIStackView!
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,24 +24,32 @@ class ProfileScreen: UIViewController, UIImagePickerControllerDelegate, UINaviga
         profileImage.clipsToBounds = true
         let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
         nameBox.text = storedUsername
+        
         getSongListFromFirestore(forUsername: storedUsername) { songList in
                 if let songList = songList {
-                    // Convert the array of song names into a single string
-                    let songListString = songList.joined(separator: ", ")
-                    // Set the label's text to the formatted string
-                    self.listOfSongs.text = "Songs: \(songListString)"
-                } else {
-                    self.listOfSongs.text = "Could not retrieve song list."
+                    for song in songList{
+                        let songLabel = UILabel()
+                        songLabel.text = song
+                        songLabel.textAlignment = .center
+                        songLabel.textColor = .black
+                        self.songsList.addArrangedSubview(songLabel)
+                        self.songsList.alignment = .center // Center the label horizontally
+                        self.songsList.distribution = .equalSpacing
+                    }
                 }
             }
+        
         getFriendListFromFirestore(forUsername: storedUsername) { friendList in
                 if let friendList = friendList {
-                    // Convert the array of song names into a single string
-                    let friendListString = friendList.joined(separator: ", ")
-                    // Set the label's text to the formatted string
-                    self.listOfNames.text = "Friends: \(friendListString)"
-                } else {
-                    self.listOfNames.text = "Could not retrieve song list."
+                    for friend in friendList{
+                        let friendLabel = UILabel()
+                        friendLabel.text = friend
+                        friendLabel.textAlignment = .center
+                        friendLabel.textColor = .black
+                        self.friendsList.addArrangedSubview(friendLabel)
+                        self.friendsList.alignment = .center // Center the label horizontally
+                        self.friendsList.distribution = .equalSpacing
+                    }
                 }
             }
         // Do any additional setup after loading the view.
@@ -98,7 +107,8 @@ class ProfileScreen: UIViewController, UIImagePickerControllerDelegate, UINaviga
                 // Get the first matching document
                 if let document = querySnapshot.documents.first {
                     // Retrieve the "songList" field
-                    if let songList = document.get("songList") as? [String] {
+                    if let songList = document.get("songList") as?
+                        [String] {
                         print("Successfully fetched songList: \(songList)")
                         completion(songList)  // Return the song list
                     } else {

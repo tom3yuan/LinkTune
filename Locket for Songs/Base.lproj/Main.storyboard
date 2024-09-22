@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -260,64 +259,71 @@
         <scene sceneID="LwS-eB-l78">
             <objects>
                 <viewController id="cei-hj-HA2" customClass="ProfileScreen" customModule="Locket_for_Songs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wxw-qr-0kI">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Wxw-qr-0kI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTI-qh-C7P">
-                                <rect key="frame" x="13" y="120" width="367" height="128"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="B0H-wc-gup">
-                                        <rect key="frame" x="0.0" y="0.0" width="367" height="128"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Username" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-Aj-lrG">
-                                <rect key="frame" x="37" y="340" width="318" height="160.66666666666669"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="B0H-wc-gup">
+                                <rect key="frame" x="17" y="77" width="360" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Username" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-Aj-lrG">
+                                <rect key="frame" x="2" y="213" width="391" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-AN-L85">
-                                <rect key="frame" x="39" y="277" width="318" height="482"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-AN-L85">
+                                <rect key="frame" x="-2" y="307" width="381" height="221"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8A-ev-7zD">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="241"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="song 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZGF-h1-dnE">
-                                        <rect key="frame" x="0.0" y="241" width="318" height="241"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqt-qE-BxK">
+                                        <rect key="frame" x="0.0" y="0.0" width="381" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My songs:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imQ-uD-H5m">
+                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="110"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="center" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="edt-mP-kU0">
+                                                <rect key="frame" x="78.333333333333343" y="0.0" width="302.66666666666663" height="110"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-Fb-Ou9">
+                                        <rect key="frame" x="0.0" y="111" width="381" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My friends:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZJ-iX-kbd">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="110"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="center" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GdM-IG-Rsh">
+                                                <rect key="frame" x="85" y="0.0" width="296" height="110"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IgF-yh-Spp"/>
-                        <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IgF-yh-Spp" firstAttribute="trailing" secondItem="qjp-AN-L85" secondAttribute="trailing" constant="36" id="EZY-O4-J3A"/>
-                            <constraint firstItem="IgF-yh-Spp" firstAttribute="bottom" secondItem="QTI-qh-C7P" secondAttribute="bottom" constant="594" id="O0t-hd-o5S"/>
-                            <constraint firstItem="QTI-qh-C7P" firstAttribute="leading" secondItem="IgF-yh-Spp" secondAttribute="leading" constant="13" id="PL3-v8-DRm"/>
-                            <constraint firstItem="IgF-yh-Spp" firstAttribute="bottom" secondItem="qjp-AN-L85" secondAttribute="bottom" constant="83" id="fSS-We-3N7"/>
-                            <constraint firstItem="QTI-qh-C7P" firstAttribute="top" secondItem="IgF-yh-Spp" secondAttribute="top" constant="120" id="qxU-lc-xa8"/>
-                            <constraint firstItem="qjp-AN-L85" firstAttribute="top" secondItem="QTI-qh-C7P" secondAttribute="bottom" constant="29" id="rnW-Dj-cDg"/>
-                            <constraint firstItem="QTI-qh-C7P" firstAttribute="centerX" secondItem="Wxw-qr-0kI" secondAttribute="centerX" id="wNq-nl-0JO"/>
-                            <constraint firstItem="qjp-AN-L85" firstAttribute="leading" secondItem="IgF-yh-Spp" secondAttribute="leading" constant="39" id="xPg-Kn-DDg"/>
+                            <constraint firstItem="qjp-AN-L85" firstAttribute="top" secondItem="IgF-yh-Spp" secondAttribute="top" constant="307" id="cFp-Lo-8yD"/>
+                            <constraint firstItem="qjp-AN-L85" firstAttribute="centerX" secondItem="Wxw-qr-0kI" secondAttribute="centerX" id="hfF-b0-lCF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ad0-cs-mf9"/>
                     <connections>
-                        <outlet property="listOfNames" destination="ZGF-h1-dnE" id="gth-Q5-SMi"/>
-                        <outlet property="listOfSongs" destination="g8A-ev-7zD" id="RE2-w4-sfE"/>
+                        <outlet property="friendsList" destination="GdM-IG-Rsh" id="aYY-Vn-pmI"/>
                         <outlet property="nameBox" destination="EZb-Aj-lrG" id="c2i-Se-pv9"/>
                         <outlet property="profileImage" destination="B0H-wc-gup" id="wog-Qg-eiW"/>
+                        <outlet property="songsList" destination="edt-mP-kU0" id="fbz-zK-hiJ"/>
+                        <outlet property="stackOfLists" destination="qjp-AN-L85" id="6TZ-Hr-1pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xi-CZ-kCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,11 +338,5 @@
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="transparent" width="778" height="802"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
