@@ -19,7 +19,7 @@ import FirebaseFirestore
 class FriendScreen: UIViewController {
     let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
     @IBOutlet weak var textbox1: UITextField!
-    
+    //random comment
     @IBOutlet weak var textbox2: UILabel!
     @IBOutlet weak var buton1: UIButton!
     var allNames: [String] = []
