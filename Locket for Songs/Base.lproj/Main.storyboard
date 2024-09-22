@@ -226,58 +226,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-p3-PoA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-p3-PoA">
                                 <rect key="frame" x="64" y="161" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2p-YR-d4d">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2p-YR-d4d">
                                 <rect key="frame" x="0.0" y="774" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="60g-ht-ZhB"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem title="Item" image="magnifyingglass" catalog="system" width="134.66666666666666" id="o4p-eg-GKk">
+                                    <barButtonItem title="Item" image="person.2" catalog="system" width="118.66666666666666" id="o4p-eg-GKk">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="CDD-xu-Ec0" kind="presentation" id="tVY-VC-ZlY"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Item" image="plus.circle" catalog="system" width="114.66666412353516" id="oyK-JF-axc">
+                                    <barButtonItem title="Item" image="plus.circle" catalog="system" width="154.66666412353516" id="oyK-JF-axc">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="kWi-cM-qmb" kind="show" id="57L-Wx-ZXs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Item" image="person.crop.circle" catalog="system" width="114.66666412353516" id="HdQ-tn-Tmm">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <segue destination="cei-hj-HA2" kind="show" id="oJD-4L-sU5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.44705885649999999" green="0.54901963470000004" blue="0.86274516580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-1S-TAJ">
-                                <rect key="frame" x="110" y="84" width="172" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-KB-ihe">
+                                <rect key="frame" x="90" y="191" width="217" height="298"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="245" id="YiR-4Q-atz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-1S-TAJ">
+                                <rect key="frame" x="32" y="59" width="332" height="104"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Playlist">
+                                    <fragment content="Songs your friends love">
                                         <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="50" name="HelveticaNeue-Bold"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="23" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-KB-ihe">
-                                <rect key="frame" x="90" y="191" width="217" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cjy-1S-TAJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="9Jf-lL-FPq"/>
+                            <constraint firstItem="U7p-KB-ihe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="D62-7D-pwd"/>
+                            <constraint firstItem="cjy-1S-TAJ" firstAttribute="centerX" secondItem="E2p-YR-d4d" secondAttribute="centerX" id="K8h-V2-J36"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MAQ-EM-FRx"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Myf-cA-joJ"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QI4-wN-0yv"/>
+                            <constraint firstItem="dbw-p3-PoA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="TIr-Le-Hmh"/>
+                            <constraint firstItem="dbw-p3-PoA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="WQ5-Xt-Ntb"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YP1-Vp-yiD"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="agG-um-Z7q"/>
+                            <constraint firstItem="cjy-1S-TAJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="bvE-TM-F3U"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cBt-8V-Yj6"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="caD-LT-3dJ"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cui-HX-fVK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U7p-KB-ihe" secondAttribute="trailing" constant="86" id="mBo-3b-2VK"/>
+                            <constraint firstItem="U7p-KB-ihe" firstAttribute="top" secondItem="dbw-p3-PoA" secondAttribute="bottom" constant="9" id="yHc-AI-zGo"/>
+                            <constraint firstItem="E2p-YR-d4d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yf3-4v-X9Q"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="titleLabel" destination="U7p-KB-ihe" id="umK-UI-ksQ"/>
@@ -376,7 +402,7 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person.2" catalog="system" width="128" height="87"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
