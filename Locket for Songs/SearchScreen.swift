@@ -6,6 +6,7 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var successMessage: UILabel!
     
     var allSongs: [[String : String]] = []
@@ -133,7 +134,7 @@ class SearchScreen: UIViewController, UISearchBarDelegate, UITableViewDelegate, 
         if let songName = selectedSong["songName"], let artistName = selectedSong["artistName"] {
             print("Selected song: \(songName) by \(artistName)")
             let storedUsername = UserDefaults.standard.string(forKey: "username") ?? ""
-            updateSongListByName(storedUsername, newSong: "\(songName) by \(artistName)")
+            updateSongListByName(storedUsername, newSong: "\(songName) ")
         }
         
         // Implement logic to play the selected song or take other actions
