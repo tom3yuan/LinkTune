@@ -31,7 +31,15 @@ class HomeScreenViewController: UIViewController {
     
     func fetchSongs() {
         var songs: [String] = []
-        
+        let totalFriends = friendsList.count
+        var fetchedSongsCount = 0
+
+        if totalFriends == 0 {
+            // No friends to fetch songs for
+            titleLabel.text = "No friends to display songs for."
+            return
+        }
+
         for friend in friendsList {
             getSongListFromFirestore(forUsername: friend) { songList in
                 if let songList = songList, !songList.isEmpty {
@@ -39,8 +47,11 @@ class HomeScreenViewController: UIViewController {
                     songs.append(songList[0])
                 }
                 
-                // After fetching all songs, update the label
-                if friend == self.friendsList.last { // Check if this is the last friend
+                // Increment the fetchedSongsCount
+                fetchedSongsCount += 1
+                
+                // After fetching songs for all friends, update the label
+                if fetchedSongsCount == totalFriends { // Check if this is the last friend
                     let songListString = songs.joined(separator: ", ")
                     print("Songs: \(songListString)")
                     self.titleLabel.text = "Songs: \(songListString)"
@@ -75,6 +86,7 @@ class HomeScreenViewController: UIViewController {
             }
         }
     }
+    
     func getFriendListFromFirestore(forUsername username: String, completion: @escaping ([String]?) -> Void) {
         let db = Firestore.firestore()
         
@@ -89,10 +101,10 @@ class HomeScreenViewController: UIViewController {
                     // Retrieve the "friendList" field
                     if let friendList = document.get("friendList") as? [String] {
                         print("Successfully fetched friendList: \(friendList)")
-                        completion(friendList)  // Return the song list
+                        completion(friendList)  // Return the friend list
                     } else {
                         print("No friendList found for user \(username)")
-                        completion(nil)  // Return nil if no songList is found
+                        completion(nil)  // Return nil if no friendList is found
                     }
                 }
             } else {
@@ -100,13 +112,8 @@ class HomeScreenViewController: UIViewController {
                 completion(nil)  // Return nil if no document found
             }
         }
-        
-        
     }
     
     // MARK: - UITableViewDataSource
     
 }
-
-// MARK: - UITableViewDelegate
-
