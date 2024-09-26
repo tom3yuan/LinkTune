@@ -1,11 +1,8 @@
 # LinkTune
 LinkTune stores a large database of users. Each user is able to pick a song from a large dataset and share it with their friends. The personalized playlist for each user consists of all the user’s friends’ recommended songs. Users can add friends by entering their username in our specialized search tab. The profile tab displays the user’s history of recommended songs, list of friends, and a profile photo that can be changed.
-Built during HackRice 14
-https://devpost.com/software/linktune
-Currently under app review by iOS store 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
-
-![alt tag](http://placecorgi.com/1200/650)
+**Built during HackRice 14
+**https://devpost.com/software/linktune
+**Currently under app review by iOS store 
 
 ## How It's Made:
 
